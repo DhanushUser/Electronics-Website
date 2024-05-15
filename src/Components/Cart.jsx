@@ -6,13 +6,13 @@ const Cart = ({ cartItems }) => {
   const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
 
   return (
-    <div id='cart' className='bg-blue-200 lg:h-[50vw] sm:h-screen w-screen fixed top-0 z-[2000]'>
+    <div id='cart' className='bg-blue-200 max-h-full lg:h-[100vh] sm:h-[100vh] min-h-[100vh] w-screen  fixed top-0 z-[2000]'>
       <Navbar />
 
-      <div className='mt-[10%]'>
-        <div className='grid grid-cols-4'>
+      <div className='mt-[15%] '>
+        <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1'>
           {cartItems.length ? cartItems.map(item => (
-            <div key={item.id} className='mx-6 bg-gray-400 rounded-[10px] flex flex-col justify-center items-center'>
+            <div key={item.id} className='mx-6 bg-gray-400 rounded-[10px] lg:flex sm:block  lg:flex-col justify-center items-center my-2'>
               <img src={item.img} alt={item.name} className='w-[150px]' />
               <h3 className='my-1 text-[16px] text-white'>{item.name}</h3>
               <h3 className='mb-1 text-[25px] font-bold text-green-950'>{`Rs.${item.price}`}</h3>
